@@ -45,3 +45,20 @@ jobs:
 
       - name: Run built Backend for testing
         run: python dist/run.py
+    
+  upload-sth:
+    name: Upload artifact
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Create file
+        run: echo hello > artifact.txt
+      
+      - name: Upload file
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: artifact.txt
+          
+    
+    
